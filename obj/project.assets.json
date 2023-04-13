@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\justi\\Downloads\\login(wip)\\login(wip).csproj",
+      "projectUniqueName": "C:\\Users\\justi\\Downloads\\jrOSsource\\login(wip).csproj",
       "projectName": "login(wip)",
-      "projectPath": "C:\\Users\\justi\\Downloads\\login(wip)\\login(wip).csproj",
+      "projectPath": "C:\\Users\\justi\\Downloads\\jrOSsource\\login(wip).csproj",
       "packagesPath": "C:\\Users\\justi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\justi\\Downloads\\login(wip)\\obj\\",
+      "outputPath": "C:\\Users\\justi\\Downloads\\jrOSsource\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\justi\\AppData\\Roaming\\NuGet\\NuGet.Config"

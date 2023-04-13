@@ -9,7 +9,7 @@ namespace jrOS // Note: actual namespace depends on the project name.
            string username;
            string password;
            string start = "f";
-           string typeapp;
+           string app;
            string typecalc;
            int num01;
            int num02;
@@ -39,10 +39,11 @@ namespace jrOS // Note: actual namespace depends on the project name.
             // main selection screen after login prompt
             Console.Clear();
             Console.Title = "jrOS Home";
-            Console.WriteLine("Which app do you want to open?\nDice\nCalculator\nMath Game\nCredits");
-            typeapp = Console.ReadLine();
+            Console.WriteLine("Which app do you want to open?\nDice\nCalculator\nMath Game\nSettings\nCredits");
+            Console.WriteLine("");
+            app = Console.ReadLine();
             // calculator start
-            if(typeapp == "calculator")
+            if(app == "calculator")
             {
                 Console.Clear();
                 Console.Title = "jrOS Calculator";
@@ -113,7 +114,7 @@ namespace jrOS // Note: actual namespace depends on the project name.
             }
             // calculator end
             // dice start
-            if(typeapp == "dice")
+            if(app == "dice")
             {
                 Console.Title = "jrOS Dice";
                 Console.Clear();
@@ -137,7 +138,7 @@ namespace jrOS // Note: actual namespace depends on the project name.
             }
             //dice end
             //math game start (ripped from other project)
-            if(typeapp == "math game")
+            if(app == "math game")
             {
                 Console.Clear();
                  Console.Title = "jrOS Math Game";
@@ -171,13 +172,106 @@ namespace jrOS // Note: actual namespace depends on the project name.
             }
             //math game end
             //credits start
-            if(typeapp == "credits")
+            if(app == "credits")
             {
                 Console.Clear();
-                Console.WriteLine("     -----Coding-----\n     Justice5600000\n     -----Teaching me to write c#-----\n     Brackeys on youtube\n     Mike Dane on youtube");
+                Console.WriteLine("     -----Coding-----\n          Justice5600000\n     -----Teaching me to write c#-----\n     Brackeys on youtube\n     Mike Dane on youtube");
                 Console.ReadKey();
             }
             //credits end
+            if(app == "rainbow")
+            {
+                Console.Title = "RaInBoW";
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("R");
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                Console.WriteLine("A");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("I");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("N");
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine("B");
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine("O");
+                Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                Console.WriteLine("W");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.ReadKey();
+            }
+            if(app == "settings")
+            {
+                string setting;
+                Console.Title = "jrOS Settings";
+                Console.Clear();
+                Console.Title = "Settings";
+                Console.WriteLine("Type Help for commands");
+                setting = Console.ReadLine();
+                if(setting == "color set red")
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Done!");
+                    Console.ReadKey();
+                }
+                if(setting == "color set orange")
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                    Console.WriteLine("Done!");
+                    Console.ReadKey();
+                }
+                if(setting == "color set yellow")
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("Done!");
+                    Console.ReadKey();
+                }
+                if(setting == "color set green")
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Done!");
+                    Console.ReadKey();
+                }
+                if(setting == "color set cyan")
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.WriteLine("Done!");
+                    Console.ReadKey();
+                }
+                if(setting == "color set blue")
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine("Done!");
+                    Console.ReadKey();
+                }
+               if(setting == "color set purple")
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                    Console.WriteLine("Done!");
+                    Console.ReadKey();
+                }
+                if(setting == "reset color")
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("Done!");
+                    Console.ReadKey();
+                }
+                if(setting == "help")
+                {
+                    Console.Clear();
+                    Console.WriteLine("The current commands are:\ncolor set, this command can set the color red orange yellow green cyan blue and purple\nreset color, this command resets the color resets to white\ntype rainbow in the home screen for a suprise ;)");
+                    Console.ReadKey();
+                }
+            }
+            
 
            
             
