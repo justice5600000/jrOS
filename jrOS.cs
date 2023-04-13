@@ -170,14 +170,14 @@ namespace jrOS // Note: actual namespace depends on the project name.
           }
             }
             //math game end
-            //settings start
+            //credits start
             if(typeapp == "credits")
             {
                 Console.Clear();
                 Console.WriteLine("     -----Coding-----\n     Justice5600000\n     -----Teaching me to write c#-----\n     Brackeys on youtube\n     Mike Dane on youtube");
                 Console.ReadKey();
             }
-            
+            //credits end
 
            
             
