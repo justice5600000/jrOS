@@ -175,8 +175,21 @@ namespace jrOS // Note: actual namespace depends on the project name.
             if(app == "credits")
             {
                 Console.Clear();
-                Console.WriteLine("     -----Coding-----\n          Justice5600000\n     -----Teaching me to write c#-----\n     Brackeys on youtube\n     Mike Dane on youtube");
+                Console.Title = "Credits";
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.WriteLine("     -----Coding-----");
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine("      Justice5600000");
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.WriteLine("     -----teaching me to write c#-----");
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine("           Brackeys on yt              ");
+                Console.WriteLine("           Mike Dane on yt             ");
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.White;
                 Console.ReadKey();
+
+
             }
             //credits end
             if(app == "rainbow")
@@ -267,11 +280,64 @@ namespace jrOS // Note: actual namespace depends on the project name.
                 if(setting == "help")
                 {
                     Console.Clear();
-                    Console.WriteLine("The current commands are:\ncolor set, this command can set the color red orange yellow green cyan blue and purple\nreset color, this command resets the color resets to white\ntype rainbow in the home screen for a suprise ;)");
+                    Console.WriteLine("The current commands are:\ncolor set, this command can set the color red orange yellow green cyan blue and purple\nreset color, this command resets the color resets to white\ntheme set this sets the theme of everything, the commands are theme set dark or theme set light\ntype rainbow or monkey in the home screen for a suprise ;)");
                     Console.ReadKey();
                 }
+                if(setting == "theme set light")
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Black;
+                   Console.BackgroundColor = ConsoleColor.White;
+                   Console.WriteLine("Done!");
+                }
+                if(setting == "theme set dark")
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.White;
+                   Console.BackgroundColor = ConsoleColor.Black;
+                   Console.WriteLine("Done!");
+                }
             }
-            
+            if(app == "monkey")
+            {
+                string monkeycolor;
+                Console.Clear();
+                Console.Title = "Monkey";
+                Console.WriteLine("What color?");
+                monkeycolor = Console.ReadLine();
+                if(monkeycolor == "white")
+                {
+                    Console.Clear();
+                Console.Title = "Monkey";
+                Console.WriteLine("w   c(. .)o   (");
+                Console.WriteLine(" |_   (-)     _| ");
+                Console.WriteLine("       |     |     ");
+                Console.WriteLine("       ()____|            ");
+                Console.WriteLine("       //               ");
+                Console.WriteLine("       ||              ");
+                Console.WriteLine("       mm                ");
+                Console.ReadKey();
+                }
+                if(monkeycolor == "black")
+                {
+                   Console.Clear();
+                   Console.ForegroundColor = ConsoleColor.Black;
+                   Console.BackgroundColor = ConsoleColor.White;
+                Console.WriteLine("w   c(. .)o   (");
+                Console.WriteLine(" |_   (-)     _| ");
+                Console.WriteLine("       |     |     ");
+                Console.WriteLine("       ()____|            ");
+                Console.WriteLine("       //               ");
+                Console.WriteLine("       ||              ");
+                Console.WriteLine("       mm                ");
+                Console.ReadKey();
+                Console.ForegroundColor = ConsoleColor.White;
+                   Console.BackgroundColor = ConsoleColor.Black;
+                
+                }
+
+               
+            }
 
            
             
