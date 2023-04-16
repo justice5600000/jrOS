@@ -8,9 +8,10 @@ color set, sets the text color <br>
 reset color, sets the text color to white <br>
 theme set, ethier set the theme to light or dark <br>
 help, displays all commands <br>
+login, shows current login info and how to change it <br>
 -----------------username & password------------------------- <br>
-The username and pasword are just set to username and password <br> 
-To change it download the source code and go the the comment that says edit this to set username and edit this to set password <br>
+i finally redid the login system:
+The username and pasword are just set to username and password at default <br> 
+To change it go in to "userandpass" folder and edit the .txt files <br>
 ------------------------------------------------------------- <br>
-<br>
-Im stil coding this and also learning more about c# so im hoping to change the login system later
+

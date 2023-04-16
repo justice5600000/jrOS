@@ -1,0 +1,27 @@
+to write an app for jrOS input this
+if(app == "yourApp")
+{
+    Console.Clear();"
+    Console.Title = "yourApp";
+    Console.WriteLine("test for your app");
+    console.ReadKey();
+}
+this is a simple test app for jrOS and a more customized one looks like this:  
+if(app == "hellowrld")
+{
+    Console.Clear();
+    Console.Title = "hellowrld";
+    Console.WriteLine("Will you bring me into the world?");
+    string wrld;
+    wrld = Console.ReadLine();
+    if(wrld == "yes")
+    {
+        Console.WriteLine("Thank you");
+        Console.ReadKey();
+    }
+    if(wrld == "no")
+    {
+        Console.WriteLine("fuck u");
+        Console.ReadKey();
+    }
+}        
