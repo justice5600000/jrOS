@@ -61,7 +61,7 @@ namespace jrOS // Note: actual namespace depends on the project name.
             // main selection screen after login prompt
             Console.Clear();
             Console.Title = "jrOS Home";
-            Console.WriteLine("Which app do you want to open?\nDice\nCalculator\nMath Game\nSettings\nCredits");
+            Console.WriteLine("Which app do you want to open?\nDice\nCalculator\nMath Game\nUrNote\nSettings\nCredits");
             Console.WriteLine("");
             app = Console.ReadLine();
             // calculator start
