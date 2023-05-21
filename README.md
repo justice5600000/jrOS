@@ -1,5 +1,12 @@
 # jrOS
-[jrOS](https://github.com/justice5600000/jrOS) is an "operating system" writted in c# <br>
+       _ _____           <br>   
+      | |  __ \          <br>    
+      | | |__) |___  ___ <br>
+  _   | |  _  // _ \/ __|<br>
+ | |__| | | \ \ (_) \__ \<br>
+  \____/|_|  \_\___/|___/<br>
+                         
+[jrOS](https://github.com/justice5600000/jrOS) is an "operating system" written in c# <br>
 -----------------Usage------------------------- <br>
 to open "apps" in jrOS type the name of them app into the main screen. <br>
 -----------------Settings------------------------- <br>
