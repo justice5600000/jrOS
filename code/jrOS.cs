@@ -1,13 +1,14 @@
-using System;
+
 using System.IO;
-using System.Linq;
+
+
 namespace jrOS // Note: actual namespace depends on the project name.
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] async)
         {
-           string username;
+        string username;
            string password;
            string start = "f";
            string app;
@@ -16,11 +17,12 @@ namespace jrOS // Note: actual namespace depends on the project name.
            int num02;
            string cresult;
            string  vfilePath = @"C:\jrOS\code\textdata\version.txt";
-        string  un1filePath = @"C:\jrOS\UrNote\note1.txt";
-        string  un2filePath = @"C:\jrOS\UrNote\note2.txt";
-        string  un3filePath = @"C:\jrOS\UrNote\note3.txt";
+           string  un1filePath = @"C:\jrOS\UrNote\note1.txt";
+           string  un2filePath = @"C:\jrOS\UrNote\note2.txt";
+           string  un3filePath = @"C:\jrOS\UrNote\note3.txt";
            string pfilePath = @"C:\jrOS\userandpass\pass.txt";
            string ufilePath = @"C:\jrOS\userandpass\user.txt";
+           
            
 
             List<string> version = new List<string>();
@@ -35,18 +37,23 @@ namespace jrOS // Note: actual namespace depends on the project name.
             user = File.ReadAllLines(ufilePath).ToList();
             var struser = String.Join(",", user.ToArray());
            
-
-           Console.Title = "jrOS login";
            
 
+           Console.Title = "jrOS login";
+           Console.ForegroundColor = ConsoleColor.DarkMagenta;
+           Console.WriteLine("       _ _____");
+           Console.WriteLine(@"      | |  __ \");
+           Console.WriteLine("      | | |__) |___  ___");
+           Console.WriteLine(@"  _   | |  _  // _ \/ __|");
+           Console.WriteLine(@" | |__| | | \ \ (_) \__ \");
+           Console.WriteLine(@"  \____/|_|  \_\___/|___/");
+           Console.ForegroundColor = ConsoleColor.White;
            Console.WriteLine(strver + "\nenter username");
            username = Console.ReadLine();
-           //edit this to set username
            if(username == struser)
            
             Console.WriteLine("enter password");
             password = Console.ReadLine();
-            //edit this to set password
             if(password == strpass)
             {
                 
@@ -54,6 +61,10 @@ namespace jrOS // Note: actual namespace depends on the project name.
                 Console.ReadKey();
                 Console.Clear();
                 Console.WriteLine("Opening");
+                using (StreamWriter writer = new StreamWriter("loginlogs.txt"))
+                       {
+                       writer.WriteLine("\nnew login");
+                        }
                 start = "t";
                 
                 while (start == "t")
@@ -61,7 +72,7 @@ namespace jrOS // Note: actual namespace depends on the project name.
             // main selection screen after login prompt
             Console.Clear();
             Console.Title = "jrOS Home";
-            Console.WriteLine("Which app do you want to open?\nDice\nCalculator\nMath Game\nUrNote\nSettings\nCredits");
+            Console.WriteLine("Which app do you want to open?\nDice\nCalculator\nMath Game\nUrNote\nTester\nSettings\nCredits");
             Console.WriteLine("");
             app = Console.ReadLine();
             // calculator start
@@ -326,6 +337,15 @@ namespace jrOS // Note: actual namespace depends on the project name.
                     Console.WriteLine("Your username is " + struser + "\nYour password is " + strpass + "\nTo change these go into the userandpass folder and change the .txt files.");
                     Console.ReadKey();
                 }
+                if(setting == "version")
+                {
+                    Console.Clear();
+                    Console.WriteLine("the current version is ");
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.Write(strver);
+                    Console.ReadKey();
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
             }
             if(app == "monkey")
             {
@@ -441,6 +461,13 @@ namespace jrOS // Note: actual namespace depends on the project name.
         
             
            }
+           if(app == "shutdown")
+           {
+            start = "f";
+            Console.WriteLine("press any key to shutdown");
+            Console.ReadKey();
+           }
+          
 
 
 
@@ -452,32 +479,109 @@ namespace jrOS // Note: actual namespace depends on the project name.
 
 
             }
+            
 
            
             
 
 
-        }            
-        }           
-}   }     
-          
+         } 
+         if(username == "admin")
+        {
+            Console.WriteLine("enter password");
+            password = Console.ReadLine();
+            if(password == "admin")
+            {
+                start = "a";
+                while(start == "a")
+                {
+                    Console.Clear();
+                    Console.Title = "jrOS Admin";
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("What would you like to do, admin?");
+                    app = Console.ReadLine();
+                   //app start
+                   
+                   if(app == "shutdown")
+           {
+            start = "f";
+            Console.WriteLine("press any key to shutdown");
+            Console.ReadKey();
+           } 
+                    if(app == "display")
+                    {
+                        Console.Clear();
+                        Console.Title = "jrOS Admin Display";
 
-                
+                        string displayO;
+                        Console.WriteLine("What would you like to display?");
+                        displayO = Console.ReadLine();
+                        if(displayO == "userinfo");
+                        {
+                            Console.WriteLine(struser);
+                        Console.WriteLine(strpass);
+                        Console.ReadKey();
+                        }
+                        if(displayO == "notes")
+                        {
+                            Console.WriteLine("test");
+                            Console.ReadKey();
+                        }
+                        
+                    }
+                    if(app == "loop")
+                    {
+                        int Lstart;
+                        string Linput;
+                        Lstart = 0;
+                        Console.WriteLine("what does it say");
+                        Linput = Console.ReadLine();
+                        Lstart = 1;
+                        while(Lstart == 1)
+                        {
+                            Console.WriteLine(Linput);
+                        }
+
+                    }
+                    if(app == "line")
+                    {
+                        Console.Clear();
+                        int linestart = 1;
+                        while(linestart == 1)
+                        {
+                           
+                          Console.WriteLine(@"                                                                 \");
+                          
+                          Console.WriteLine("                                                                 -");
+                          
+                          Console.WriteLine("                                                                 /");
+                          
+                          Console.WriteLine("                                                                 |");
+                         
+                        }
+                    }
+                    if(app == "SWtest")
+                    {
+                        string opps;
+                        opps = "asd";
+                         using (StreamWriter writer = new StreamWriter("data.txt"))
+                       {
+                       writer.WriteLine("Hello, World!" + opps);
+                        }
+                        Console.WriteLine("done!, check data.txt");
+                        Console.ReadKey();
+                    }
+                   
+                }
+            }
+            else
+            {
+                Console.WriteLine("incorrect");
+                Console.ReadKey();
+               
+            }
+         }           
+        }  
             
-           
-
-
-
-            
-           
-       
-                
-                
-            
-            
-           
-
-
-
-    
-
+    }
+}
