@@ -1,7 +1,3 @@
-to write an app for jrOS go into the jros.cs file and create an new if statement with the name of your app have it apen an new class make a new file with the JRos namespace and have the if statement refer to that class, there you can put all your code 
-
-Sample app:
-
 namespace jrOS // Note: actual namespace depends on the project name.
 {
      class testClass
