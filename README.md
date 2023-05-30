@@ -1,17 +1,17 @@
 # jrOS
 [jrOS](https://github.com/justice5600000/jrOS) is an "operating system" writted in c# <br>
 -----------------Usage------------------------- <br>
-to open "apps" in jrOS type the name of them app into the main screen. <br>
+to open "apps" in jrOS simply use the arrow keys to select one . <br>
 -----------------Settings------------------------- <br>
 The commands you can put into settings are: <br>
-color set, sets the text color <br>
-reset color, sets the text color to white <br>
-theme set, ethier set the theme to light or dark <br>
-help, displays all commands <br>
-login, shows current login info and how to change it <br>
+color set: all of the color commands are currently broken :( <br>
+reset color: this command resets the color resets to white <br>
+theme set: this sets the theme of everything, the commands are theme set dark or theme set light <br>
+login: this shows the current user login info <br>
+edit: you can you edit to edit your username and password from the jrOS app just put edit user or pass <br>
+admin: this command brings up the admin login screen and the username and password are admin <br>
 -----------------username & password------------------------- <br>
-i finally redid the login system:
-The username and pasword are just set to username and password at default <br> 
-To change it go in to "userandpass" folder and edit the .txt files <br>
+To change the username and password go into settings and type in either edit user or pass <br>
+They are set to username and password at default <br>
 ------------------------------------------------------------- <br>
 

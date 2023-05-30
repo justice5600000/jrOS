@@ -4,9 +4,10 @@ namespace jrOS // Note: actual namespace depends on the project name.
     {
         public static void settings()
         {
+           
             string  vfilePath = @"C:\jrOS\code\textdata\version.txt";
-           string pfilePath = @"C:\jrOS\userandpass\pass.txt";
-           string ufilePath = @"C:\jrOS\userandpass\user.txt";
+           string pfilePath = @"C:\jrOS\code\textdata\userandpass\pass.txt";
+           string ufilePath = @"C:\jrOS\code\textdata\userandpass\user.txt";
             List<string> version = new List<string>();
             version = File.ReadAllLines(vfilePath).ToList();
             var strver = String.Join(",", version.ToArray());     
@@ -21,68 +22,14 @@ namespace jrOS // Note: actual namespace depends on the project name.
           string setting;
                 Console.Title = "jrOS Settings";
                 Console.Clear();
+                
                 Console.WriteLine("Type Help for commands");
                 setting = Console.ReadLine();
-                if(setting == "color set red")
-                {
-                    Console.Clear();
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Done!");
-                    Console.ReadKey();
-                }
-                if(setting == "color set orange")
-                {
-                    Console.Clear();
-                    Console.ForegroundColor = ConsoleColor.DarkYellow;
-                    Console.WriteLine("Done!");
-                    Console.ReadKey();
-                }
-                if(setting == "color set yellow")
-                {
-                    Console.Clear();
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("Done!");
-                    Console.ReadKey();
-                }
-                if(setting == "color set green")
-                {
-                    Console.Clear();
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("Done!");
-                    Console.ReadKey();
-                }
-                if(setting == "color set cyan")
-                {
-                    Console.Clear();
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Done!");
-                    Console.ReadKey();
-                }
-                if(setting == "color set blue")
-                {
-                    Console.Clear();
-                    Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.WriteLine("Done!");
-                    Console.ReadKey();
-                }
-               if(setting == "color set purple")
-                {
-                    Console.Clear();
-                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                    Console.WriteLine("Done!");
-                    Console.ReadKey();
-                }
-                if(setting == "reset color")
-                {
-                    Console.Clear();
-                    Console.ForegroundColor = ConsoleColor.White;
-                    Console.WriteLine("Done!");
-                    Console.ReadKey();
-                }
+                
                 if(setting == "help")
                 {
                     Console.Clear();
-                    Console.WriteLine("The current commands are:\ncolor set, this command can set the color red orange yellow green cyan blue and purple\nreset color, this command resets the color resets to white\ntheme set this sets the theme of everything, the commands are theme set dark or theme set light\nlogin, this shows the current user login info\ntype rainbow or monkey in the home screen for a suprise ;)");
+                    Console.WriteLine("The current commands are:\ncolor set: all of the color commands are currently broken :(\nreset color: this command resets the color resets to white\ntheme set: this sets the theme of everything, the commands are theme set dark or theme set light\nlogin: this shows the current user login info\nedit: you can you edit to edit your username and password from the jrOS app just put edit user or pass\nadmin: this command brings the admin login screen the username and password are admin\ntype rainbow or monkey for a suprise ;)");
                     Console.ReadKey();
                 }
                 if(setting == "theme set light")
@@ -113,6 +60,60 @@ namespace jrOS // Note: actual namespace depends on the project name.
                     Console.Write(strver);
                     Console.ReadKey();
                     Console.ForegroundColor = ConsoleColor.White;
+                }
+                if(setting == "monkey")
+                {
+                    miscClass.monkey();
+                }
+                if(setting == "rainbow")
+                {
+                    miscClass.rainbow();
+                }
+                if(setting == "edit user")
+                {
+                    Console.Clear();
+                    Console.WriteLine("Enter new username:");
+                    string Uinput;
+                    Uinput = Console.ReadLine();
+                    using (StreamWriter writer = new StreamWriter(ufilePath))
+                    {
+                        writer.WriteLine(Uinput);
+                    }
+                    Console.WriteLine("Done!");
+                }
+                if(setting == "edit pass")
+                {
+                    Console.Clear();
+                    Console.WriteLine("Enter new password:");
+                    string Pinput;
+                    Pinput = Console.ReadLine();
+                    using (StreamWriter writer = new StreamWriter(pfilePath))
+                    {
+                        writer.WriteLine(Pinput);
+                    }
+                    Console.WriteLine("Done!");
+
+                }
+                if(setting == "admin")
+                {
+                    Console.Clear();
+                    string apass;
+                    string auser;
+                    Console.WriteLine("enter username");
+                    auser = Console.ReadLine();
+                    Console.WriteLine("enter password");
+                    apass = Console.ReadLine();
+                    if(auser == "admin" | apass == "admin")
+                    {
+                        Console.WriteLine("Correct!");
+                        Console.ReadKey();
+                        AdminClass.adminstart();
+                    }
+                    else
+                    {
+                        Console.WriteLine("incorrect");
+                    }
+                    
                 }
         }
     }

@@ -1,4 +1,6 @@
 //shhhh this is a secret
+using System.Diagnostics;
+
 namespace jrOS // Note: actual namespace depends on the project name.
 {
      class miscClass
@@ -84,6 +86,14 @@ namespace jrOS // Note: actual namespace depends on the project name.
                 Console.ForegroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.ReadKey();
+        }
+        public static void GitOpener()
+        {
+            Console.WriteLine("opening...");
+           var prs = new ProcessStartInfo(@"C:\Program Files\Google\Chrome\Application\chrome.exe");
+           prs.Arguments = "https://github.com/justice5600000";
+           Process.Start(prs);
+           Console.Clear();
         }
     }
 }        

@@ -1,4 +1,4 @@
-to write an app for jrOS go into the jros.cs file and create an new if statement with the name of your app have it apen an new class make a new file with the JRos namespace and have the if statement refer to that class, there you can put all your code 
+to write an app for jrOS go into the jros.cs file and create a new peice of text in the list MenuOptions this will be the name of your app.  Add a new case with the number after the previous one. Make a new class with the jrOS namespace. Have your case statement open that class, that class is where all of your code is going to be
 
 Sample app:
 

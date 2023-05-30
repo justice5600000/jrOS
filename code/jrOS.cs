@@ -13,8 +13,8 @@ namespace jrOS // Note: actual namespace depends on the project name.
            string start = "f";
            string app;
            string  vfilePath = @"C:\jrOS\code\textdata\version.txt";
-           string pfilePath = @"C:\jrOS\userandpass\pass.txt";
-           string ufilePath = @"C:\jrOS\userandpass\user.txt";
+           string pfilePath = @"C:\jrOS\code\textdata\userandpass\pass.txt";
+           string ufilePath = @"C:\jrOS\code\textdata\userandpass\user.txt";
            
            
 
@@ -33,7 +33,7 @@ namespace jrOS // Note: actual namespace depends on the project name.
            
 
            Console.Title = "jrOS login";
-           Console.ForegroundColor = ConsoleColor.DarkMagenta;
+           Console.ForegroundColor = ConsoleColor.Blue;
            Console.WriteLine("       _ _____");
            Console.WriteLine(@"      | |  __ \");
            Console.WriteLine("      | | |__) |___  ___");
@@ -41,16 +41,15 @@ namespace jrOS // Note: actual namespace depends on the project name.
            Console.WriteLine(@" | |__| | | \ \ (_) \__ \");
            Console.WriteLine(@"  \____/|_|  \_\___/|___/");
            Console.ForegroundColor = ConsoleColor.White;
+           //login start
            Console.WriteLine(strver + "\nenter username");
            username = Console.ReadLine();
-           if(username == struser)
-           
-            Console.WriteLine("enter password");
-            password = Console.ReadLine();
-            if(password == strpass)
-            {
-                
-                Console.WriteLine("Correct! Press any key to start");
+           Console.WriteLine("enter password");
+           password = Console.ReadLine();
+           if(username == struser | password == strpass)
+           {
+            //main menu start
+            Console.WriteLine("Correct! Press any key to start");
                 Console.ReadKey();
                 Console.Clear();
                 Console.WriteLine("Opening");
@@ -60,81 +59,105 @@ namespace jrOS // Note: actual namespace depends on the project name.
            {
             // main selection screen after login prompt
             Console.Clear();
-            Console.Title = "jrOS Home";
-            Console.WriteLine("Which app do you want to open?\nDice\nCalculator\nMath Game\nUrNote\nTester\nSettings\nCredits");
-            Console.WriteLine("");
-            app = Console.ReadLine();
-            // calculator start
-            if(app == "calculator")
+            string[] menuOptions = { "Calculator", "Dice", "Math Game", "UrNote", "Tester", "Settings", "Credits", "GitHub"};
+        int selectedIndex = 0;
+
+        Console.CursorVisible = false;
+        bool start2 = true;
+
+        while (start2 == true)
+        {
+            Console.Clear();
+            Console.WriteLine("Welcome to ");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.Write("jrOS");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write(":\n");
+            Console.Title = "jrOS";
+
+            // Display the menu options
+            for (int i = 0; i < menuOptions.Length; i++)
             {
-                CalcClass.calculator();
+               
+                if (i == selectedIndex)
+                {
+
+                   Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("> " + menuOptions[i]);
+                }
+                else
+                {
+                    
+                    Console.WriteLine("  " + menuOptions[i]);
+                }
+
+                Console.ResetColor();
             }
-            // calculator end
-            // dice start
-            if(app == "dice")
+
+            // Get user input
+            ConsoleKeyInfo keyInfo = Console.ReadKey();
+            ConsoleKey key = keyInfo.Key;
+
+            // Handle user input
+            if (key == ConsoleKey.UpArrow)
             {
-              DiceClass.Dice();
+                selectedIndex = (selectedIndex - 1 + menuOptions.Length) % menuOptions.Length;
             }
-            //dice end
-            //math game start (ripped from other project)
-            if(app == "math game")
+            else if (key == ConsoleKey.DownArrow)
             {
-                MgameClass.Mgame();
+                selectedIndex = (selectedIndex + 1) % menuOptions.Length;
             }
-            //math game end
-            //credits start
-            if(app == "credits")
+            else if (key == ConsoleKey.Enter)
             {
-                miscClass.credits();
+                // Perform action based on selected index
+                Console.Clear();
+
+                switch (selectedIndex)
+                {
+                    case 0:
+                       CalcClass.calculator();
+                        break;
+                    case 1:
+                        DiceClass.Dice();
+                        break;
+                    case 2:
+                       MgameClass.Mgame();
+                        break;
+                    case 3:
+                     UrNoteClass.UrNote();
+                        break;
+                        case 4:
+                        testerClass.testerapp();
+                        break;
+                        case 5:
+                       settingsClass.settings();
+                        break;
+                        case 6:
+                        miscClass.credits();
+                        break;
+                        case 7:
+                        miscClass.GitOpener();
+                        break;
+                        
+                }
+
+                Console.ReadLine(); // Wait for user input before continuing
             }
-            //credits end
-            if(app == "rainbow")
-            {
-                miscClass.rainbow();
-            }
-            if(app == "settings")
-            {
-                settingsClass.settings();
-            }
-            if(app == "monkey")
-            {
-                miscClass.monkey();  
-            }
-            if(app == "tester")
-            {
-             testerClass.testerapp();
-            }
-            if(app == "urnote")
-           {
-            UrNoteClass.UrNote();
            }
-           if(app == "shutdown")
+           }
+           }
+           else
            {
-            start = "f";
-            Console.WriteLine("press any key to shutdown");
+            Console.WriteLine("Incorrect!");
             Console.ReadKey();
            }
-           if(app == "test")
-           {
-            testClass.testapp();
-           }
-            }
-         } 
-         if(username == "admin")
-        {
-            Console.WriteLine("enter password");
-            password = Console.ReadLine();
-            if(password == "admin")
-            {
-               AdminClass.adminstart();
-            }
-            else
-            {
-                Console.WriteLine("incorrect");
-                Console.ReadKey();
-               
-            }
-         }           
+            
+                
+                
+        
+            
+         
+                      
         }  
             
     }
