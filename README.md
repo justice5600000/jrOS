@@ -1,4 +1,3 @@
-# jrOS
 ![d5ef199fbdc7ac051fdce9b88d04743c](https://github.com/justice5600000/jrOS/assets/110572226/771afb66-5e63-41c1-a213-8559d13a060a)
 
 [jrOS](https://github.com/justice5600000/jrOS) is an "operating system" writted in c# <br>
