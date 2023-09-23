@@ -78,7 +78,6 @@ C:\jrOS\code\bin\Debug\net7.0\login(wip).deps.json
 C:\jrOS\code\bin\Debug\net7.0\login(wip).runtimeconfig.json
 C:\jrOS\code\bin\Debug\net7.0\login(wip).dll
 C:\jrOS\code\bin\Debug\net7.0\login(wip).pdb
-C:\jrOS\code\obj\Debug\net7.0\login(wip).csproj.AssemblyReference.cache
 C:\jrOS\code\obj\Debug\net7.0\login(wip).GeneratedMSBuildEditorConfig.editorconfig
 C:\jrOS\code\obj\Debug\net7.0\login(wip).AssemblyInfoInputs.cache
 C:\jrOS\code\obj\Debug\net7.0\login(wip).AssemblyInfo.cs

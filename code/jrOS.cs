@@ -1,4 +1,5 @@
 
+using System.Drawing;
 using System.IO;
 
 
@@ -6,11 +7,18 @@ namespace jrOS // Note: actual namespace depends on the project name.
 {
     internal class Program
     {
+        private static Random _random = new Random();
+private static ConsoleColor GetRandomConsoleColor()
+{
+    var consoleColors = Enum.GetValues(typeof(ConsoleColor));
+    return (ConsoleColor)consoleColors.GetValue(_random.Next(consoleColors.Length));
+}
+
         static void Main(string[] async)
         {
-        string username;
-           string password;
-           string start = "f";
+            string username;
+            string password;
+            string start = "f";
            string app;
            string  vfilePath = @"C:\jrOS\code\textdata\version.txt";
            string pfilePath = @"C:\jrOS\code\textdata\userandpass\pass.txt";
@@ -33,15 +41,17 @@ namespace jrOS // Note: actual namespace depends on the project name.
            
 
            Console.Title = "jrOS login";
-           Console.ForegroundColor = ConsoleColor.Blue;
-           Console.WriteLine("       _ _____");
-           Console.WriteLine(@"      | |  __ \");
-           Console.WriteLine("      | | |__) |___  ___");
-           Console.WriteLine(@"  _   | |  _  // _ \/ __|");
-           Console.WriteLine(@" | |__| | | \ \ (_) \__ \");
-           Console.WriteLine(@"  \____/|_|  \_\___/|___/");
+           
+                      Console.ForegroundColor = (ConsoleColor)_random.Next(15);
+           Console.WriteLine(@"    _       ___  ____  ");
+           Console.WriteLine(@"   (_)_ __ / _ \/ ___| ");
+           Console.WriteLine(@"   | | '__| | | \___ \ ");
+           Console.WriteLine(@"   | | |  | |_| |___) |");
+           Console.WriteLine(@"  _/ |_|   \___/|____/ ");
+           Console.WriteLine(@" |__/                  ");
            Console.ForegroundColor = ConsoleColor.White;
            //login start
+           
            Console.WriteLine(strver + "\nenter username");
            username = Console.ReadLine();
            Console.WriteLine("enter password");
@@ -69,7 +79,7 @@ namespace jrOS // Note: actual namespace depends on the project name.
         {
             Console.Clear();
             Console.WriteLine("Welcome to ");
-            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.Gray;
             Console.Write("jrOS");
             Console.ForegroundColor = ConsoleColor.White;
             Console.Write(":\n");

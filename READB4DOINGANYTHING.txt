@@ -1,1 +1,3 @@
 Make sure this folder is in the C: (os) folder unless the password system wont work properly!!!!
+
+also install .net sdk if you havent already

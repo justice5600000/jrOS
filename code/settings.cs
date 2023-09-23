@@ -29,7 +29,7 @@ namespace jrOS // Note: actual namespace depends on the project name.
                 if(setting == "help")
                 {
                     Console.Clear();
-                    Console.WriteLine("The current commands are:\ncolor set: all of the color commands are currently broken :(\nreset color: this command resets the color resets to white\ntheme set: this sets the theme of everything, the commands are theme set dark or theme set light\nlogin: this shows the current user login info\nedit: you can you edit to edit your username and password from the jrOS app just put edit user or pass\nadmin: this command brings the admin login screen the username and password are admin\ntype rainbow or monkey for a suprise ;)");
+                    Console.WriteLine("The current commands are:\ncolor set: all of the color commands are currently broken :(\nreset color: this command resets the color resets to white\ntheme set: this sets the theme of everything, the commands are theme set dark or theme set light\nlogin: this shows the current user login info\nedit login: this command lets you edit your jrOS login.\nadmin: this command brings the admin login screen the username and password are admin\ntype rainbow or monkey for a suprise ;)");
                     Console.ReadKey();
                 }
                 if(setting == "theme set light")
@@ -69,7 +69,7 @@ namespace jrOS // Note: actual namespace depends on the project name.
                 {
                     miscClass.rainbow();
                 }
-                if(setting == "edit user")
+                if(setting == "edit login")
                 {
                     Console.Clear();
                     Console.WriteLine("Enter new username:");
@@ -80,11 +80,7 @@ namespace jrOS // Note: actual namespace depends on the project name.
                         writer.WriteLine(Uinput);
                     }
                     Console.WriteLine("Done!");
-                }
-                if(setting == "edit pass")
-                {
-                    Console.Clear();
-                    Console.WriteLine("Enter new password:");
+                      Console.WriteLine("Enter new password:");
                     string Pinput;
                     Pinput = Console.ReadLine();
                     using (StreamWriter writer = new StreamWriter(pfilePath))
@@ -92,8 +88,8 @@ namespace jrOS // Note: actual namespace depends on the project name.
                         writer.WriteLine(Pinput);
                     }
                     Console.WriteLine("Done!");
-
                 }
+                
                 if(setting == "admin")
                 {
                     Console.Clear();
